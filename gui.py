@@ -27,37 +27,37 @@ def page1(root):
     global l
     l=[]
     top=root
-    main_label = Label(top,text="Witaj w scrapingu danych ze stron zawierających oferty pracy !",pady=10)
+    main_label = Label(top,text="Welcome to data scraping app which helps you to find the perfect job for you",pady=10)
     main_label.pack()
 
-    second_label = Label(top,text="Wybierz stronę:",pady=5)
+    second_label = Label(top,text="Choose site:",pady=5)
     second_label.pack()
 
-    listing=["Wszystkie","Pracuj.pl","Nofluff"]
+    listing=["All","Pracuj.pl"]
     variable = StringVar(top)
     variable.set(listing[1])
     combobox = OptionMenu(top,variable,*listing)
     combobox.pack()
 
-    job_label=Label(top,text="Podaj stanowisko lub język:",pady=5)
+    job_label=Label(top,text="Write a position or programing language:",pady=5)
     job_label.pack()
 
     job_entry=Entry(top)
     job_entry.pack()
 
-    city_label=Label(top,text="Podaj miejscowość:",pady=5)
+    city_label=Label(top,text="Write a city:",pady=5)
     city_label.pack()
 
     city_entry=Entry(top)
     city_entry.pack()
 
-    seniority_label=Label(top,text="Podaj doświadczenie:",pady=5)
+    seniority_label=Label(top,text="Write seniority:",pady=5)
     seniority_label.pack()
 
     seniority_entry=Entry(top)
     seniority_entry.pack()
 
-    km_label=Label(top,text="Podaj max odległość od miejscowości:",pady=5)
+    km_label=Label(top,text="Write a max distance from city you chose:",pady=5)
     km_label.pack()
 
     km_entry = Entry(top)
@@ -69,7 +69,7 @@ def page1(root):
 #This function is making a loading page
 def page2(root):
     top=root
-    main_label = Label(top,text="Prosze czekać, trwa ładowanie strony",pady=10)
+    main_label = Label(top,text="Please wait. We are loading the page",pady=10)
     main_label.pack()
     my_progress = ttk.Progressbar (root, orient=HORIZONTAL, length=300 ,mode='determinate')
     my_progress.pack(pady=15)
@@ -79,7 +79,7 @@ def page3(root,results):
     top=root
     def back():
         changepage(1,root)
-    my_button = Button(top,text="Cofnij",command=back)
+    my_button = Button(top,text="Back",command=back)
     my_button.pack(pady=10)
     my_listbox=Listbox(top)
     my_listbox.pack(pady=15,padx=15)
@@ -94,13 +94,13 @@ def page3(root,results):
         webbrowser.open(url)
     f=0
     for item in results:
-        my_listbox.insert(END, item[0]+' w firmie: '+item[1])
+        my_listbox.insert(END, item[0]+' in company: '+item[1])
 
     for i in range(my_listbox.size()):
         if i%2 == 0:
             my_listbox.itemconfig(i, {'bg':'light green'})
     
-    my_button2 = Button(top,text="Wybierz",command=select)
+    my_button2 = Button(top,text="Choose",command=select)
     my_button2.pack(pady=10)
     my_label = Label(top, text='')
     my_label.pack(pady=5)
@@ -109,6 +109,6 @@ def page3(root,results):
 
 top = Tk()
 top.geometry("800x600")
-top.title("Witam w mojej apce")
+top.title("Welcome to my app")
 page1(top)
 top.mainloop()
