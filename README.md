@@ -1,5 +1,5 @@
 # FindingJob
-Project which helps you find jobs on some sides like "https://pracuj.pl/", "https://nofluffjobs.com/".
+Project which helps you find jobs on some sites like "https://pracuj.pl/", "https://nofluffjobs.com/".
 
 App is very simple. You mast have both scripts (gui.py + scrap.py) un the same folder. Scripts are using selenium and BeautifulSoup, which you must download by pip.
 
