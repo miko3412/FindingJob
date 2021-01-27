@@ -4,7 +4,7 @@ Project which helps you find jobs on some sides like "https://pracuj.pl/", "http
 App is very simple. You mast have both scripts (gui.py + scrap.py) un the same folder. Scripts are using selenium and BeautifulSoup, which you must download by pip.
 
 You can see how to install them on:
-https://pypi.org/project/beautifulsoup4/
+https://pypi.org/project/beautifulsoup4/ ,
 https://pypi.org/project/selenium/
 
 
